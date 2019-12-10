@@ -24,3 +24,26 @@ Then push it to **your GitHub account** and continue working from there. Once yo
 - We like readable code
 - We like using the latest features of ES6 where applicable
 - Last but not least, have fun!
+
+## Running instructions:
+- Install using yarn or npm
+	```bash
+	yarn -i # or use npm install
+	```
+- To run a production build, run
+  ```bash
+	yarn build # Or npm run build
+	```
+- To run a hot reloading dev build, run
+  ```bash
+	yarn dev # Or npm run dev
+	```
+- To test, run
+  ```bash
+	yarn test # or npm run test
+	```
+- To lint, run
+  ```bash
+	yarn lint # or npm run lint
+	```
+  
