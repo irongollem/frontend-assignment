@@ -95,5 +95,15 @@ describe('Testing Flight class', () => {
 
       expect(mockAddFlight.mock.calls[0][0].airport).toBe('Sandefjord')
     })
+    it('should call screen.addFlight only once if query only matches one', async () => {
+      flights.getFlights = jest.fn(() => new Promise((resolve, reject) => { resolve(flightsArray) }))
+
+      await flights.handleFlights({
+        target: {
+          value: 'sant'
+        }
+      })
+      expect(mockAddFlight).toHaveBeenCalledTimes(1)
+    })
   })
 })
