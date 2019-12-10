@@ -1,14 +1,24 @@
 const isDevelopment = process.env.NODE_ENV === 'development'
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 
 module.exports = {
     plugins: [
         new MiniCssExtractPlugin({
-            filename: isDevelopment ? '[name].css' : '[name].[has].css',
-            chunkFilename: isDevelopment ? '[id].css' : '[id].[hash].css'
+            filename: isDevelopment ? 'style.css' : 'style.[contenthash].css',
+        }),
+        new HtmlWebpackPlugin({
+            inject: false,
+            hash: true,
+            template: './src/index.html',
+            filename: 'index.html'
         })
     ],
+    entry: { main: './src/index.js' },
+    output: {
+        filename: '[name].[chunkhash].js'
+    },
     module: {
         rules: [
             {
@@ -35,4 +45,4 @@ module.exports = {
     resolve: {
         extensions: ['.js', '.scss']
     }
-};
+}

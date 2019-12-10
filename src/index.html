@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Flight explorer</title>
+  <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.chunks.main.css %>">
+</head>
+
+<body>
+  <div class="rw-input"
+       data-component="rw-input-element"
+       data-realtime="true">
+      <label for="flight-input" class="rw-input-label">Destination</label>
+      <input id="flight-input"
+              class="rw-input-text"
+              data-input="true"
+              placeholder="For example: San Fransisco"
+              type="text"/>
+      <div id="result-container"></div>
+    
+  </div>
+    
+    
+  <script src="<%= htmlWebpackPlugin.files.chunks.main.entry %>"></script>
+</body>
+
+</html>
