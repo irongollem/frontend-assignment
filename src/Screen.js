@@ -8,6 +8,10 @@ export default class Screen {
   }
 
   addFlight (flight) {
+    if (!flight || typeof flight !== 'object' || Array.isArray(flight)) {
+      throw new Error('Incorrect input for Screen.addFlight()')
+    }
+
     const flightblock = document.createElement('div')
     flightblock.classList.add('rw-card')
 
